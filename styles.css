@@ -1,0 +1,481 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background-color: black;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hamburger menu */
+#menu {
+  width: 35px;
+  height: 50px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 40px;
+  height: 4px;
+  background: #FD6A02;
+  display: block;
+  margin-top: 4px;
+  border-radius: 5px;
+  transition: .3s ease;
+}
+
+#bar1 {
+    transform: translateY(-4px)
+}
+
+#bar3 {
+  transform: translateY(4px)
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav li a:hover {
+  font-weight: bold;
+}
+
+.nav li {
+  list-style: none;
+  padding: 15px 0
+}
+
+.nav {
+  padding: 0;
+  margin: 0 20px;
+  display: none;
+  transition: .3s ease;
+}
+
+.menu-bg, 
+#menu-bar {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.menu-bg {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  margin: 10px 0 10px 4px;
+  background: #FD6A02;
+  border-bottom-right-radius: 0%;
+  transition: .3s ease;
+}
+
+#menu-bar {
+  z-index: 2;
+}
+
+.change-bg {
+  width: 415px;
+  height: 438px;
+  transform: translate(-60%,-30%);
+}
+
+.change .bar {
+  background: #fff;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg)
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg)
+}
+
+.change #bar2 {
+    opacity: 0;
+  }
+
+  .change {
+    display: block;
+  }
+  
+ /* Infinite News Ticker Scrolling Animation */
+ .tcontainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker-wrap {
+  width: 100%;
+  padding-left: 100%;
+  padding-top: 150px;
+  background-color: transparent;
+}
+
+/* Keyframes */
+@keyframes ticker {
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  position: absolute;
+  animation-timing-function: linear;
+  animation: ticker 45s infinite;
+}
+
+/* Stop scrolling on hover */
+.ticker-move:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 20px;
+  color: #FD6A02;
+}
+
+/* iframe container (YouTube) */
+.iframe-container {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 2%;
+  margin-top: 88px;
+  margin-left: 550px;
+}
+
+.iframe-container iframe {
+  top: 550px;
+  left: 0;
+  width: 835px;
+  height: 470px;
+}
+
+/* section */
+.section {
+  height: 100vh;
+}
+.section .fp-tableCell {
+  padding:2em;
+}
+
+h2, h3, h4 {
+  margin-top: 80px;
+  font-weight: 600;
+  color:#FD6A02;
+  text-align: center;
+}
+
+/* Felidae */
+h2 {
+  
+  font-size: 32px;
+  font-weight: bold;
+  color: #FD6A02;
+  text-align: center;
+  padding-bottom: 580px;
+} 
+
+p {
+  font-size: 16px;
+  color: #FD6A02;
+  width: 74%;
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  padding-bottom: 8px;
+  padding-left: 550px;
+}
+
+.read-more-btn {
+  padding: 6px 7px;
+
+  background-color: black;
+  color: #FD6A02;
+  border-color: #FD6A02;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.text.show-more .moreText{
+  display: inline;
+}
+
+/* List of Felidae */
+h3 {
+  
+  font-size: 32px;
+  font-weight: bold;
+  color: #FD6A02;
+  text-align: center;
+  margin-top: -34px;
+  padding-bottom: 60px;
+}
+
+/* Fur patterns */
+h4 {
+  
+  font-size: 32px;
+  font-weight: bold;
+  color: #FD6A02;
+  text-align: center;
+  margin-top: 58px;
+  padding-top: 160px;
+}
+
+h8 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #FD6A02;
+  text-align: center;
+  margin-top: 58px;
+  padding-bottom: 360px;
+}
+
+/* image viewer */
+.hide {
+  display: none;
+}
+
+#gallerly.container1 {
+  width: 650px;
+  margin-left: 650px;
+}
+
+#gallerly .image-viewer {
+  position: relative;
+}
+
+#gallerly .image-viewer .preview {
+  position: absolute;
+  width: 100%;
+  background-color: #1D1D1D;
+  border: 1px solid #f1f1f1;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+
+#gallerly .image-viewer .preview img {
+  float: left;
+  height: 300px;
+  margin-right: 15px;
+}
+
+#gallerly .image-viewer > a > img {
+  height: 150px;
+}
+
+#gallerly .image-viewer > a {
+  cursor: pointer;
+  border: 1px solid #f1f1f1;
+  padding: 3px;
+  margin: 5px;
+  display: inline-block;
+}
+
+#gallerly .image-viewer > a:hover {
+  border: 1px solid #aaa;
+
+}
+
+#gallerly * {
+  position: relative;
+  -webkit-transition: all 0.15s ease;
+	-moz-transition: all 0.15s ease;
+	-ms-transition: all 0.15s ease;
+	-o-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+}
+
+#gallerly .thumbnail.move-down {
+  top: 346px;
+}
+
+#gallerly .preview a {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+#gallerly .preview .wrapper1 {
+  position: relative;
+  display: inline-block;
+}
+
+#gallerly .preview .close-preview {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+#gallerly .preview .prev1 {
+  position: absolute;
+  left: 6px;
+  top: 50%
+}
+
+#gallerly .preview .next1 {
+  position: absolute;
+  right: 6px;
+  top: 50%
+}
+
+#gallerly .preview .preview-content {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+#gallerly .preview .title {
+  color: #ccc;
+}
+
+#gallerly .preview .description {
+  color: rgba(204, 204, 204, 0.57);
+}
+
+#gallerly .preview .arrow {
+  border-bottom: 10px solid #222;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  width: 0;
+}
+
+/* style for flipping card starts here */
+
+.flipping-cards{
+  margin-top: -3px;
+  padding: 1px 0;
+  background-image: linear-gradient(to left bottom, #ffa41b, #ff5151);
+  font-family: 'Rubik', sans-serif;
+  margin-top: -594px;
+}
+
+.flipping-card-wrapper{
+  padding: 3px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.flipping-card-item-wrapper{
+  perspective: 150rem;
+  position: relative;
+  width:   188px;
+  height:  188px;
+  margin: 10px;
+}
+
+.flipping-card-item-side{
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  margin:  1px;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-color: #ffffff;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.18);
+  transition: all 1s;
+}
+
+.flipping-card-item-side-back{
+  color: #000;
+  transform: rotateY(180deg);
+}
+
+
+.flipping-card-item-wrapper:hover .flipping-card-item-side-front{
+  transform: rotateY(-180deg);
+}
+
+.flipping-card-item-wrapper:hover .flipping-card-item-side-back{
+  transform: rotateY(0);
+}
+
+.flipping-card-item-img{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-blend-mode: color;
+}
+
+.flipping-card-back-wrapper{
+  font-weight: 200;
+  position: relative;
+  top: 25%;
+  left: 0;
+  margin: 1rem;
+  text-align: center;
+}
+
+.flipping-card-back-wrapper__btn {
+  margin-top: 1rem;
+  padding: .7rem;
+  text-align: center;
+  color: #ffffff;
+  border: 0;
+  background-image: linear-gradient(to right bottom, #ffa41b, #ff5151);
+  transition: all .5s;
+}
+
+.flipping-card-back-wrapper__btn:hover {
+  background-image: none;
+  color: #ffa41b;
+  border: 1px solid #ffa41b;
+}
+
+h5 {
+  font-weight: 600;
+  color:#FD6A02;
+  text-align: center;
+
+}
+h6 {
+  color:#FD6A02;
+  text-align: center;
+}
+h7 {
+
+  font-weight: 600;
+  color:#FD6A02;
+  text-align: center;
+}
+h8 {
+
+  font-weight: 600;
+  color:#FD6A02;
+  text-align: center;
+}
+
+h9 {
+  font-weight: 600;
+  color:#FD6A02;
+  text-align: center;
+}
